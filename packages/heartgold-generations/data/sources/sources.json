@@ -1,0 +1,28 @@
+{
+  "schemaVersion": "1.0",
+  "gamePackage": "heartgold-generations",
+  "gameVersion": "2.0",
+  "sources": [
+    {
+      "id": "hgg-2.0-documentation",
+      "title": "HeartGold Generations 2.0 documentation",
+      "kind": "hack-doc",
+      "status": "pending-import",
+      "priority": 1
+    },
+    {
+      "id": "manual-game-verification",
+      "title": "Manual verification in HeartGold Generations 2.0",
+      "kind": "manual-test",
+      "status": "ongoing",
+      "priority": 2
+    },
+    {
+      "id": "pokeapi-standard-baseline",
+      "title": "PokéAPI standard Pokémon baseline",
+      "kind": "api",
+      "status": "available",
+      "priority": 3
+    }
+  ]
+}

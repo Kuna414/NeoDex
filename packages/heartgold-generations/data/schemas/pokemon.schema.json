@@ -1,0 +1,337 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://neodex.local/schemas/pokemon.schema.json",
+  "title": "NeoDex Pokémon Record",
+  "description": "Standardized Pokémon data with optional ROM-hack overrides.",
+  "type": "object",
+  "required": [
+    "schemaVersion",
+    "nationalDex",
+    "names",
+    "generation",
+    "types",
+    "abilities",
+    "baseStats",
+    "evolution",
+    "sources"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "schemaVersion": {
+      "type": "string",
+      "const": "1.0"
+    },
+    "nationalDex": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 9999
+    },
+    "slug": {
+      "type": "string",
+      "pattern": "^[a-z0-9-]+$"
+    },
+    "names": {
+      "type": "object",
+      "required": [
+        "en",
+        "de"
+      ],
+      "additionalProperties": {
+        "type": "string",
+        "minLength": 1
+      },
+      "properties": {
+        "en": {
+          "type": "string",
+          "minLength": 1
+        },
+        "de": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "generation": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 20
+    },
+    "category": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      }
+    },
+    "types": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 2,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "enum": [
+          "normal",
+          "fire",
+          "water",
+          "electric",
+          "grass",
+          "ice",
+          "fighting",
+          "poison",
+          "ground",
+          "flying",
+          "psychic",
+          "bug",
+          "rock",
+          "ghost",
+          "dragon",
+          "dark",
+          "steel",
+          "fairy"
+        ]
+      }
+    },
+    "abilities": {
+      "type": "object",
+      "required": [
+        "regular",
+        "hidden"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "regular": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 2,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "hidden": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "baseStats": {
+      "type": "object",
+      "required": [
+        "hp",
+        "attack",
+        "defense",
+        "specialAttack",
+        "specialDefense",
+        "speed"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "hp": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 255
+        },
+        "attack": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 255
+        },
+        "defense": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 255
+        },
+        "specialAttack": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 255
+        },
+        "specialDefense": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 255
+        },
+        "speed": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 255
+        }
+      }
+    },
+    "heightM": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "minimum": 0
+    },
+    "weightKg": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "minimum": 0
+    },
+    "evolution": {
+      "type": "object",
+      "required": [
+        "familyId",
+        "from",
+        "to"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "familyId": {
+          "type": "string",
+          "minLength": 1
+        },
+        "from": {
+          "type": [
+            "object",
+            "null"
+          ],
+          "additionalProperties": false,
+          "required": [
+            "nationalDex",
+            "method"
+          ],
+          "properties": {
+            "nationalDex": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "method": {
+              "type": "string"
+            }
+          }
+        },
+        "to": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "nationalDex",
+              "method"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "nationalDex": {
+                "type": "integer",
+                "minimum": 1
+              },
+              "method": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    },
+    "gameData": {
+      "type": "object",
+      "description": "Game-package-specific data. Kept separate from user progress.",
+      "additionalProperties": true,
+      "properties": {
+        "learnset": {
+          "type": "array"
+        },
+        "encounters": {
+          "type": "array"
+        },
+        "heldItems": {
+          "type": "array"
+        }
+      }
+    },
+    "overrides": {
+      "type": "array",
+      "description": "Explicit ROM-hack overrides. Standard values remain traceable.",
+      "items": {
+        "type": "object",
+        "required": [
+          "field",
+          "value",
+          "reason",
+          "sourceId",
+          "status"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "field": {
+            "type": "string",
+            "minLength": 1
+          },
+          "value": {},
+          "reason": {
+            "type": "string",
+            "minLength": 1
+          },
+          "sourceId": {
+            "type": "string",
+            "minLength": 1
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "verified",
+              "unverified",
+              "inferred"
+            ]
+          }
+        }
+      }
+    },
+    "sources": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "title",
+          "kind",
+          "gameVersion",
+          "status"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "title": {
+            "type": "string",
+            "minLength": 1
+          },
+          "kind": {
+            "type": "string",
+            "enum": [
+              "official-doc",
+              "hack-doc",
+              "api",
+              "manual-test",
+              "community"
+            ]
+          },
+          "gameVersion": {
+            "type": "string",
+            "minLength": 1
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "verified",
+              "unverified",
+              "inferred"
+            ]
+          },
+          "notes": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

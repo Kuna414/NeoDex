@@ -1,0 +1,19 @@
+{
+  "id": "heartgold-generations",
+  "displayName": "HeartGold Generations 2.0",
+  "version": "2.0",
+  "hackLanguage": "en",
+  "supportedInterfaceLanguages": [
+    "de",
+    "en"
+  ],
+  "pokemonNameRule": "show-localized-and-hack-name-when-languages-differ",
+  "features": {
+    "pokedex": true,
+    "routeDex": false,
+    "itemDex": false,
+    "trainerDex": false,
+    "guide": false
+  },
+  "dataStatus": "in-progress"
+}

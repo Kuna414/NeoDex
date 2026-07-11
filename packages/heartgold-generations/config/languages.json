@@ -1,0 +1,17 @@
+{
+  "hackLanguage": "en",
+  "interfaceLanguages": [
+    "de",
+    "en"
+  ],
+  "displayExamples": {
+    "de": {
+      "primary": "Glurak",
+      "secondary": "Charizard"
+    },
+    "en": {
+      "primary": "Charizard",
+      "secondary": null
+    }
+  }
+}

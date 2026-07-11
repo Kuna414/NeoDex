@@ -1,23 +1,21 @@
-# NeoDex 0.2 — Pokémon Repository
+# GitHub Pages Entry Patch
 
-Dieses Patch-Paket ergänzt:
+Enthalten:
 
-- `PokemonRepository`-Schnittstelle
-- In-Memory-Implementierung
-- mehrsprachige Suche
-- Suche nach Nationaldex-Nummer
-- Slug-Zugriff
-- Generation-Filter
-- Runtime-Lader mit grundlegender Prüfung
-- Vitest-Testfälle
-- deutsche und englische Dokumentation
-
-## GitHub-Upload
-
-ZIP entpacken und den Inhalt in das bestehende Repository hochladen.
+- `index.html` im Repository-Stamm
+- Weiterleitung zu `app/web/`
+- NeoDex-Ladeansicht
+- `.nojekyll`
+- `404.html`
 
 Commit-Nachricht:
 
 ```text
-Add Pokémon repository and search
+Add GitHub Pages entry point
+```
+
+Adresse nach der Veröffentlichung:
+
+```text
+https://kuna414.github.io/NeoDex/
 ```

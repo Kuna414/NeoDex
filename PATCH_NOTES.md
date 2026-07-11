@@ -1,20 +1,23 @@
-# NeoDex 0.2 — Pokédex Core Data Model
+# NeoDex 0.2 — Pokémon Repository
 
 Dieses Patch-Paket ergänzt:
 
-- JSON Schema für Pokémon-Datensätze
-- TypeScript-Modell
-- Bisasam/Bulbasaur als Beispieldatensatz
-- Quellenregister für HGG 2.0
-- deutsche und englische Datenmodell-Dokumentation
-- gültige und ungültige Test-Fixtures
+- `PokemonRepository`-Schnittstelle
+- In-Memory-Implementierung
+- mehrsprachige Suche
+- Suche nach Nationaldex-Nummer
+- Slug-Zugriff
+- Generation-Filter
+- Runtime-Lader mit grundlegender Prüfung
+- Vitest-Testfälle
+- deutsche und englische Dokumentation
 
-## Upload
+## GitHub-Upload
 
-Den Inhalt dieses Ordners in das bestehende Repository ziehen. Vorhandene Dateien dürfen zusammengeführt beziehungsweise überschrieben werden.
+ZIP entpacken und den Inhalt in das bestehende Repository hochladen.
 
 Commit-Nachricht:
 
 ```text
-Add Pokédex core data model
+Add Pokémon repository and search
 ```

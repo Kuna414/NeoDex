@@ -1,0 +1,100 @@
+import type { PokemonRecord } from "../../core/models/pokemon";
+
+export const pokemonFixtures: PokemonRecord[] = [
+  {
+    schemaVersion: "1.0",
+    nationalDex: 1,
+    slug: "bulbasaur",
+    names: { de: "Bisasam", en: "Bulbasaur" },
+    generation: 1,
+    types: ["grass", "poison"],
+    abilities: { regular: ["overgrow"], hidden: "chlorophyll" },
+    baseStats: {
+      hp: 45,
+      attack: 49,
+      defense: 49,
+      specialAttack: 65,
+      specialDefense: 65,
+      speed: 45,
+    },
+    evolution: {
+      familyId: "bulbasaur-line",
+      from: null,
+      to: [{ nationalDex: 2, method: "level:16" }],
+    },
+    overrides: [],
+    sources: [
+      {
+        id: "fixture",
+        title: "Test fixture",
+        kind: "manual-test",
+        gameVersion: "test",
+        status: "verified",
+      },
+    ],
+  },
+  {
+    schemaVersion: "1.0",
+    nationalDex: 4,
+    slug: "charmander",
+    names: { de: "Glumanda", en: "Charmander" },
+    generation: 1,
+    types: ["fire"],
+    abilities: { regular: ["blaze"], hidden: "solar-power" },
+    baseStats: {
+      hp: 39,
+      attack: 52,
+      defense: 43,
+      specialAttack: 60,
+      specialDefense: 50,
+      speed: 65,
+    },
+    evolution: {
+      familyId: "charmander-line",
+      from: null,
+      to: [{ nationalDex: 5, method: "level:16" }],
+    },
+    overrides: [],
+    sources: [
+      {
+        id: "fixture",
+        title: "Test fixture",
+        kind: "manual-test",
+        gameVersion: "test",
+        status: "verified",
+      },
+    ],
+  },
+  {
+    schemaVersion: "1.0",
+    nationalDex: 25,
+    slug: "pikachu",
+    names: { de: "Pikachu", en: "Pikachu" },
+    generation: 1,
+    types: ["electric"],
+    abilities: { regular: ["static"], hidden: "lightning-rod" },
+    baseStats: {
+      hp: 35,
+      attack: 55,
+      defense: 40,
+      specialAttack: 50,
+      specialDefense: 50,
+      speed: 90,
+    },
+    evolution: {
+      familyId: "pichu-line",
+      from: { nationalDex: 172, method: "friendship" },
+      to: [{ nationalDex: 26, method: "thunder-stone" }],
+    },
+    overrides: [],
+    sources: [
+      {
+        id: "fixture",
+        title: "Test fixture",
+        kind: "manual-test",
+        gameVersion: "test",
+        status: "verified",
+      },
+    ],
+  },
+];

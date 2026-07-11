@@ -1,0 +1,22 @@
+{
+  "name": "NeoDex – Pokémon ROM Hack Companion",
+  "short_name": "NeoDex",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#061626",
+  "theme_color": "#061626",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "./icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "./icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

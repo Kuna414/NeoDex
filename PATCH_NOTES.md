@@ -1,21 +1,28 @@
-# GitHub Pages Entry Patch
+# NeoDex 0.4 — Vite Build and GitHub Actions
+
+Dieses Patch-Paket ersetzt die einfache GitHub-Pages-Weiterleitung durch eine professionelle Build-Struktur.
 
 Enthalten:
 
-- `index.html` im Repository-Stamm
-- Weiterleitung zu `app/web/`
-- NeoDex-Ladeansicht
-- `.nojekyll`
-- `404.html`
+- Vite
+- `src/` und `public/`
+- Produktionsordner `dist/`
+- GitHub-Actions-Workflow
+- automatischer Test vor Veröffentlichung
+- freigegebenes Masterdesign als Startseite
+- funktionierende Touch-Flächen
+- erste Pokédex-, NeoUI- und Einstellungsseiten
+
+## Upload
+
+ZIP entpacken und den gesamten Inhalt ins Repository hochladen. Vorhandene `index.html`, `package.json` und `tsconfig.json` dürfen ersetzt werden.
 
 Commit-Nachricht:
 
 ```text
-Add GitHub Pages entry point
+Add Vite build and automatic Pages deployment
 ```
 
-Adresse nach der Veröffentlichung:
+## Danach
 
-```text
-https://kuna414.github.io/NeoDex/
-```
+GitHub → Settings → Pages → Source auf **GitHub Actions** ändern.

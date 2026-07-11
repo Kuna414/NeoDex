@@ -9,7 +9,9 @@
     "skipLibCheck": true
   },
   "include": [
+    "src/**/*",
     "core/**/*.ts",
-    "tests/**/*.ts"
+    "tests/**/*.ts",
+    "vite.config.js"
   ]
 }

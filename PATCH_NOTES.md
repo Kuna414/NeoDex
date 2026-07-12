@@ -1,18 +1,19 @@
-# NeoDex 0.6 — Pokédex UI
+# NeoDex 0.10 – Core Release
 
-Commit:
+## Installation
 
-```text
-Build functional bilingual Pokédex UI
+1. ZIP entpacken.
+2. Den gesamten Inhalt in den lokalen NeoDex-Hauptordner kopieren.
+3. Vorhandene Dateien in `src/` und `public/` ersetzen.
+4. Lokal testen:
+
+```powershell
+cd C:\Users\Nero\Documents\GitHub\NeoDex
+npm run dev
 ```
 
-Enthalten:
+## Commit
 
-- 1.025 Pokémon
-- deutsche und englische Suche
-- Nummernsuche
-- Generation- und Statusfilter
-- Favoriten, gesehen, gefangen und Shiny
-- lokale Speicherung
-- HGG-Änderungsmarkierungen
-- erste Detailansicht
+```text
+Release NeoDex 0.10 core
+```
